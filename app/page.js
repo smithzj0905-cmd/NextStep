@@ -195,53 +195,6 @@ export default function Home() {
         </p>
       </section>
 
-      {history.length > 0 && (
-        <section className="history" id="history">
-          <div className="section-heading">
-            <div>
-              <div className="eyebrow">YOUR RECORD</div>
-              <h2>Document history</h2>
-              <p>
-                Revisit documents you have analyzed on this device.
-              </p>
-            </div>
-
-            <button
-              className="text-button"
-              onClick={clearHistory}
-            >
-              Clear history
-            </button>
-          </div>
-
-          <div className="history-list">
-            {history.map((item) => (
-              <button
-                key={item.id}
-                className="history-item"
-                onClick={() => openHistory(item)}
-              >
-                <div>
-                  <strong>
-                    {item.analysis?.title || item.fileName}
-                  </strong>
-
-                  <span>
-                    {item.fileName}
-                  </span>
-                </div>
-
-                <div className="history-date">
-                  {new Date(item.createdAt).toLocaleDateString()}
-                  <br />
-                  View →
-                </div>
-              </button>
-            ))}
-          </div>
-        </section>
-      )}
-
       {displayedResult && (
         <section id="results" className="results">
           <div className="result-top">
